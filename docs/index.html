@@ -9,11 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="GidonFrischkorn" />
 
-<meta name="date" content="2020-03-31" />
 
-<title>IRT_Simulation</title>
+<title>Home</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -263,69 +258,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -333,16 +265,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -386,9 +308,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">IRT_Simulation</h1>
-<h4 class="author">GidonFrischkorn</h4>
-<h4 class="date">2020-03-31</h4>
+<h1 class="title toc-ignore">Home</h1>
 
 </div>
 
@@ -416,7 +336,7 @@ div.tocify {
 <strong>Last updated:</strong> 2020-03-31
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>Raven_WMcapacity/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -438,66 +358,6 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
 <div class="panel-body">
 <p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
-</p>
-</div>
-<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
-<div class="panel-body">
-<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20200331code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20200331)</code> </a>
-</p>
-</div>
-<div id="strongSeedstrongcodesetseed20200331code" class="panel-collapse collapse">
-<div class="panel-body">
-<p>The command <code>set.seed(20200331)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
-</p>
-</div>
-<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
-<div class="panel-body">
-<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
-</p>
-</div>
-<div id="strongCachestrongnone" class="panel-collapse collapse">
-<div class="panel-body">
-<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
-</div>
-</div>
-</div>
-<div class="panel panel-default">
-<div class="panel-heading">
-<p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
-</p>
-</div>
-<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
-<div class="panel-body">
-<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
 </div>
 </div>
 </div>
@@ -535,7 +395,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/IRT_Simulation.Rmd</code>) and HTML (<code>docs/IRT_Simulation.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -561,10 +421,10 @@ Message
 <tbody>
 <tr>
 <td>
-html
+Rmd
 </td>
 <td>
-<a href="https://rawcdn.githack.com/GidonFrischkorn/Raven_WMcapacity/ebf0aba94a13824c264f0106169d3192b0206684/docs/IRT_Simulation.html" target="_blank">ebf0aba</a>
+<a href="https://github.com/GidonFrischkorn/Raven_WMcapacity/blob/20dbfee4816d661570ec105a93ac2359edabe1d4/analysis/index.Rmd" target="_blank">20dbfee</a>
 </td>
 <td>
 GidonFrischkorn
@@ -573,7 +433,7 @@ GidonFrischkorn
 2020-03-31
 </td>
 <td>
-Build site.
+wflow_git_commit(all = TRUE)
 </td>
 </tr>
 <tr>
@@ -581,16 +441,16 @@ Build site.
 Rmd
 </td>
 <td>
-<a href="https://github.com/GidonFrischkorn/Raven_WMcapacity/blob/d830d55f16987105ee853873a4876887119b327d/analysis/IRT_Simulation.Rmd" target="_blank">d830d55</a>
+<a href="https://github.com/GidonFrischkorn/Raven_WMcapacity/blob/a492f2b1d6508503c59b40cdf0bac3ca75632713/analysis/index.Rmd" target="_blank">a492f2b</a>
 </td>
 <td>
-GidonFrischkorn
+GidonFrischkor
 </td>
 <td>
 2020-03-31
 </td>
 <td>
-Add first steps
+Start workflowr project.
 </td>
 </tr>
 </tbody>
@@ -600,70 +460,9 @@ Add first steps
 </div>
 </div>
 </div>
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
-<p><img src="figure/IRT_Simulation.Rmd/IRT%20equal%20discriminability-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p><img src="figure/IRT_Simulation.Rmd/IRT%20decreasing%20discriminability-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p><img src="figure/IRT_Simulation.Rmd/IRT%20increasing%20discriminability-1.png" width="672" style="display: block; margin: auto;" /></p>
-<br>
-<p>
-<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
-<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
-</button>
-</p>
-<div id="workflowr-sessioninfo" class="collapse">
-<pre class="r"><code>sessionInfo()</code></pre>
-<pre><code>R version 3.6.3 (2020-02-29)
-Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 18362)
-
-Matrix products: default
-
-locale:
-[1] LC_COLLATE=German_Germany.1252  LC_CTYPE=German_Germany.1252   
-[3] LC_MONETARY=German_Germany.1252 LC_NUMERIC=C                   
-[5] LC_TIME=German_Germany.1252    
-
-attached base packages:
-[1] stats     graphics  grDevices utils     datasets  methods   base     
-
-other attached packages:
-[1] ggplot2_3.3.0   brms_2.12.0     Rcpp_1.0.4      truncnorm_1.0-8
-[5] tidyr_1.0.2     dplyr_0.8.5     workflowr_1.6.1
-
-loaded via a namespace (and not attached):
- [1] Brobdingnag_1.2-6    gtools_3.8.1         StanHeaders_2.21.0-1
- [4] threejs_0.3.3        shiny_1.4.0.2        assertthat_0.2.1    
- [7] stats4_3.6.3         yaml_2.2.1           pillar_1.4.3        
-[10] backports_1.1.5      lattice_0.20-38      glue_1.3.2          
-[13] digest_0.6.25        promises_1.1.0       colorspace_1.4-1    
-[16] htmltools_0.4.0      httpuv_1.5.2         Matrix_1.2-18       
-[19] plyr_1.8.6           dygraphs_1.1.1.6     pkgconfig_2.0.3     
-[22] rstan_2.19.3         purrr_0.3.3          xtable_1.8-4        
-[25] mvtnorm_1.1-0        scales_1.1.0         processx_3.4.2      
-[28] whisker_0.4          later_1.0.0          git2r_0.26.1        
-[31] tibble_2.1.3         farver_2.0.3         bayesplot_1.7.1     
-[34] DT_0.13              withr_2.1.2          shinyjs_1.1         
-[37] cli_2.0.2            magrittr_1.5         crayon_1.3.4        
-[40] mime_0.9             ps_1.3.2             evaluate_0.14       
-[43] fansi_0.4.1          fs_1.3.2             nlme_3.1-144        
-[46] xts_0.12-0           pkgbuild_1.0.6       colourpicker_1.0    
-[49] prettyunits_1.1.1    rsconnect_0.8.16     tools_3.6.3         
-[52] loo_2.2.0            lifecycle_0.2.0      matrixStats_0.56.0  
-[55] stringr_1.4.0        munsell_0.5.0        callr_3.4.2         
-[58] compiler_3.6.3       rlang_0.4.5          grid_3.6.3          
-[61] ggridges_0.5.2       htmlwidgets_1.5.1    crosstalk_1.1.0.1   
-[64] igraph_1.2.5         miniUI_0.1.1.1       labeling_0.3        
-[67] base64enc_0.1-3      rmarkdown_2.1        gtable_0.3.0        
-[70] inline_0.3.15        abind_1.4-5          markdown_1.1        
-[73] reshape2_1.4.3       R6_2.4.1             gridExtra_2.3       
-[76] rstantools_2.0.0     zoo_1.8-7            knitr_1.28          
-[79] bridgesampling_1.0-0 fastmap_1.0.1        shinystan_2.5.0     
-[82] shinythemes_1.1.2    rprojroot_1.3-2      stringi_1.4.6       
-[85] parallel_3.6.3       vctrs_0.2.4          tidyselect_1.0.0    
-[88] xfun_0.12            coda_0.19-3         </code></pre>
-</div>
-</div>
+<p>Welcome to this research website that addresses the question in how far Raven matrices are useful to test the capacity hypothesis of intelligence. The capacity hypothesis states that individual differences in intelligence are due to differences in the capacity to store and hold active information in working memory. Previous research has established strong and consistent correlations between working memory capacity and intelligence. The cognitive processes underlying this relationship are, however, still under debate.</p>
+<p>Some studies have used single items of the Raven advanced progressive matrices test (RAPM) to investigate the cognitive processes underlying individual differences in intelligence. For a long time, the RAPM were seen as the single best indicator of fluid intelligence.</p>
+<p>Click <a href="IRT_Simulation.html">here</a> to see further details for the simulation and its results.</p>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
@@ -679,8 +478,6 @@ footer is added to webpages before the MathJax javascript. -->
 </script>
 
 
-</div>
-</div>
 
 </div>
 
@@ -713,32 +510,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

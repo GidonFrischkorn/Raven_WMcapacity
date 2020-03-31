@@ -7,4 +7,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+I am Gidon Frischkorn, a cognitive psychologist currently working in the cognitive psychology lab under the direction of Prof. Klaus Oberauer at the University of Zurich (UZH). From 2009 until 2015, I studied psychology at Heidelberg University where I also finished my PhD on Basic cognitive processes of intelligence in early 2019 under the supervision of Prof. Dirk Hagemann.
+
+If you have any questions regarding this project and the associates analyses, please do not hesitate to contacte me via e-mail: gidon.frischkorn@psychologie.uzh.ch

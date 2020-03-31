@@ -1,7 +1,7 @@
-name: "Raven_WMcapacity"
+name: Raven_WMcapacity
 output_dir: ../docs
 navbar:
-  title: "Raven_WMcapacity"
+  title: Raven_WMcapacity
   left:
   - text: Home
     href: index.html
@@ -9,6 +9,10 @@ navbar:
     href: about.html
   - text: License
     href: license.html
+  right:
+  - icon: fa-github
+    text: Source code
+    href: https://github.com/GidonFrischkorn/Raven_WMcapacity
 output:
   workflowr::wflow_html:
     toc: yes

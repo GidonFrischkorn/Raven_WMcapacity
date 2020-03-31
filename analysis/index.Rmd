@@ -8,4 +8,8 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+Welcome to this research website that addresses the question in how far Raven matrices are useful to test the capacity hypothesis of intelligence. The capacity hypothesis states that individual differences in intelligence are due to differences in the capacity to store and hold active information in working memory. Previous research has established strong and consistent correlations between working memory capacity and intelligence. The cognitive processes underlying this relationship are, however, still under debate.
+
+Some studies have used single items of the Raven advanced progressive matrices test (RAPM) to investigate the cognitive processes underlying individual differences in intelligence. For a long time, the RAPM were seen as the single best indicator of fluid intelligence.
+
+Click [here](IRT_Simulation.html) to see further details for the simulation and its results.

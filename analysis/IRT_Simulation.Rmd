@@ -1,0 +1,148 @@
+---
+title: "IRT_Simulation"
+author: "GidonFrischkorn"
+date: "2020-03-31"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+```{r Setup, include=FALSE}
+# load packages
+library(dplyr)
+library(tidyr)
+library(truncnorm)
+library(brms)
+library(ggplot2)
+
+# specify some settings for MCMC sampling and plotting
+options(mc.cores=parallel::detectCores())
+theme_set(theme_bw())
+```
+
+```{r 3PL IRT, include=FALSE}
+# function implementing a 3 parameter IRT model
+# theta: person ability
+# beta: item difficulty
+# alpha: item discrimination
+# gamma: guessing probability -> fixed to zero
+prob_IRT_3PL <- function(theta,beta,alpha,gamma = 0){
+  p_theta <- (gamma + (1-gamma))*((exp(alpha*(theta - beta)))/(1 + exp(alpha*(theta - beta))))
+}
+```
+
+```{r Load Raven Info, include=FALSE}
+# load information on number of rules for raven items
+raven_rules <- read.table(paste("data","Raven_Rules.csv",sep="/"), 
+                          sep = ";", header = T)
+colnames(raven_rules) <- c("item","nRules","N")
+```
+
+```{r Simulation Setup, include=FALSE}
+Lims_MeanCap <- c(1,4)
+Lims_Discrimination <- c(1,4)
+nSims <- 100      # number of simulations for each condition
+nSubjects <- 250  # number of subjects for each simulation
+
+# Parameters to vary across simulations
+item_discrimination <- c("equal","increasing","decreasing")
+pop_meanCap <- c(1,2,3,4)     # average capacity of the population
+pop_sd <- c(0.4,0.8,1.2)      # variability of capacity in the population
+r_capIQ <- c(1,0.66,0.33)
+
+# create matrix specifying each simulation condition
+sim_conditions <- expand.grid(discrim = item_discrimination,
+                              trueCap = pop_meanCap,
+                              trueVar = pop_sd,
+                              cor_CapIQ = r_capIQ,
+                              nSub = nSubjects, nSim = nSims)
+
+# pre-allocate matrix to save results
+simResults <- expand.grid(nSim = 1:nSims,
+                          item = raven_rules$item,
+                          discrim = item_discrimination,
+                          trueCap = pop_meanCap,
+                          trueVar = pop_sd,
+                          cor_CapIQ = r_capIQ,
+                          nSub = nSubjects)
+
+# join the number of rules for each raven item
+simResults <- simResults %>% 
+  left_join(raven_rules[,1:2], by = "item")
+
+# pre-allocate variable for correlation between 
+# item performance and latent capacity
+simResults$cor_IQ <- NA 
+simResults$cor_WMC <- NA 
+simResults$itemTotal_cor <- NA 
+```
+
+```{r IRT equal discriminability, echo=FALSE}
+# ICF for equal discrimination
+equalDiscrim_data <- expand.grid(nRules = 1:4,
+                                 SubID = 1:nSubjects)
+
+item_discrims <- tibble(nRules = 1:4,
+                        item_discrim = rep(4, times = 4))
+SubThetas <- tibble(SubID = 1:nSubjects,
+                    theta = runif(nSubjects,min = 0, max = 6))
+
+equalDiscrim_data <- equalDiscrim_data %>% 
+  left_join(SubThetas, by = "SubID") %>% 
+  left_join(item_discrims, by = "nRules") %>% 
+  mutate(pCorr = prob_IRT_3PL(theta = theta, beta = nRules, 
+                              alpha = item_discrim))
+rm(SubThetas,item_discrims)
+
+equalDiscrim_data$nRules <- as.factor(equalDiscrim_data$nRules)
+
+ggplot(data = equalDiscrim_data,
+       aes(x = theta, y = pCorr, group = nRules, color= nRules)) +
+  geom_line(size = 1.5)
+```
+
+```{r IRT decreasing discriminability, echo=FALSE}
+decreasDiscrim_data <- expand.grid(nRules = 1:4,
+                                   SubID = 1:nSubjects)
+
+item_discrims <- tibble(nRules = 1:4,
+                        item_discrim = seq(from =6, to = 2,length.out = 4))
+SubThetas <- tibble(SubID = 1:nSubjects,
+                    theta = runif(nSubjects,min = 0, max = 6))
+
+decreasDiscrim_data <- decreasDiscrim_data %>% 
+  left_join(SubThetas, by = "SubID") %>% 
+  left_join(item_discrims, by = "nRules") %>% 
+  mutate(pCorr = prob_IRT_3PL(theta = theta, beta = nRules, alpha = item_discrim))
+rm(SubThetas,item_discrims)
+
+# code number of rules as factors
+decreasDiscrim_data$nRules <- as.factor(decreasDiscrim_data$nRules)
+
+ggplot(data = decreasDiscrim_data,
+       aes(x = theta, y = pCorr, group = nRules, color= nRules)) +
+  geom_line(size = 1.5)
+```
+
+```{r IRT increasing discriminability, echo=FALSE}
+increasDiscrim_data <- expand.grid(nRules = 1:4,
+                                   SubID = 1:nSubjects)
+
+item_discrims <- tibble(nRules = 1:4,
+                        item_discrim = seq(from = 2, to = 6,length.out = 4))
+SubThetas <- tibble(SubID = 1:nSubjects,
+                    theta = runif(nSubjects,min = 0, max = 6))
+
+increasDiscrim_data <- increasDiscrim_data %>% 
+  left_join(SubThetas, by = "SubID") %>% 
+  left_join(item_discrims, by = "nRules") %>% 
+  mutate(pCorr = prob_IRT_3PL(theta = theta, beta = nRules, alpha = item_discrim))
+rm(SubThetas,item_discrims)
+
+increasDiscrim_data$nRules <- as.factor(increasDiscrim_data$nRules)
+ggplot(data = increasDiscrim_data,
+       aes(x = theta, y = pCorr, group = nRules, color= nRules)) +
+  geom_line(size = 1.5)
+```
